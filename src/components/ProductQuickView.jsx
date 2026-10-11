@@ -27,11 +27,11 @@ export default function ProductQuickView({
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overscroll-contain"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-end sm:items-center sm:justify-center p-0 sm:p-4 overscroll-contain"
       data-lenis-prevent="true"
     >
       <div
-        className="relative bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl border border-terracotta-200 my-8 overscroll-contain"
+        className="relative bg-white rounded-none sm:rounded-3xl max-w-4xl w-full h-full sm:h-auto overflow-hidden shadow-2xl border border-terracotta-200 sm:my-8 max-h-[100dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain"
         onClick={(e) => e.stopPropagation()}
         data-lenis-prevent="true"
       >
@@ -47,8 +47,8 @@ export default function ProductQuickView({
         <div className="grid grid-cols-1 md:grid-cols-2">
           
           {/* Left Column: Image Showcase */}
-          <div className="bg-terracotta-50 p-6 flex flex-col justify-between">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-white shadow-sm border border-terracotta-200/60">
+          <div className="bg-terracotta-50 p-4 sm:p-6 flex flex-col justify-between">
+            <div className="relative aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden bg-white shadow-sm border border-terracotta-200/60">
               <img
                 src={product.images[selectedImgIdx] || product.images[0]}
                 alt={product.name}
@@ -80,7 +80,7 @@ export default function ProductQuickView({
           </div>
 
           {/* Right Column: Specs & Purchasing */}
-          <div className="p-6 sm:p-8 flex flex-col justify-between max-h-[85vh] overflow-y-auto">
+          <div className="p-4 sm:p-8 flex flex-col justify-between">
             <div>
               {/* Category & Rating */}
               <div className="flex items-center justify-between text-xs text-terracotta-700">
@@ -145,7 +145,7 @@ export default function ProductQuickView({
             </div>
 
             {/* Actions: Quantity & Add to Cart */}
-            <div className="mt-6 pt-5 border-t border-terracotta-100 flex items-center gap-3">
+            <div className="mt-6 pt-4 sm:pt-5 border-t border-terracotta-100 flex items-center gap-2 sm:gap-3 sticky bottom-0 bg-white z-10 pb-[max(0.25rem,env(safe-area-inset-bottom))] -mx-4 px-4 sm:-mx-8 sm:px-8">
               <div className="flex items-center border border-terracotta-200 rounded-full px-2 py-1 bg-white">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}

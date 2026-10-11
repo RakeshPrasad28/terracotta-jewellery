@@ -37,11 +37,11 @@ export default function CheckoutModal({ isOpen, onClose, checkoutData, onOrderSu
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overscroll-contain"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-0 sm:p-4 overscroll-contain"
       data-lenis-prevent="true"
     >
       <div
-        className="relative bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-terracotta-200 my-8 overscroll-contain"
+        className="relative bg-white rounded-none sm:rounded-3xl max-w-xl w-full h-full sm:h-auto p-5 sm:p-8 shadow-2xl border border-terracotta-200 my-0 sm:my-8 overflow-y-auto overscroll-contain"
         onClick={(e) => e.stopPropagation()}
         data-lenis-prevent="true"
       >

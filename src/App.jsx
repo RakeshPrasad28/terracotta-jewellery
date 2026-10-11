@@ -177,7 +177,7 @@ export default function App() {
       
       {/* Toast Notification Banner */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-terracotta-950 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 text-xs font-medium border border-terracotta-800 animate-bounce-subtle">
+        <div className="fixed bottom-20 left-4 right-4 sm:bottom-6 sm:left-auto sm:right-6 z-50 bg-terracotta-950 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 text-xs font-medium border border-terracotta-800 animate-bounce-subtle">
           <span className="w-2 h-2 rounded-full bg-warmGold-400"></span>
           <span>{toastMessage}</span>
         </div>
@@ -275,7 +275,7 @@ export default function App() {
       />
 
       {/* Floating Bespoke Customizer Sticky Pill for quick access */}
-      <div className="fixed bottom-6 left-6 z-30">
+      <div className="fixed bottom-4 left-4 z-30">
         <button
           onClick={scrollToCustomizer}
           className="bg-white/95 backdrop-blur-md text-terracotta-900 border border-terracotta-300 hover:border-terracotta-600 px-4 py-2.5 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center space-x-2 text-xs font-bold tracking-wider uppercase group hover:-translate-y-0.5"

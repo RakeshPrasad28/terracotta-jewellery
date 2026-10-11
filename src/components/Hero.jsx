@@ -168,11 +168,11 @@ export default function Hero({ onExploreClick, onOpenCustomizer, onSelectCategor
         </div>
 
         {/* 3 Featured Category Showcase Tiles */}
-        <div ref={cardsRef} className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div ref={cardsRef} className="mt-8 sm:mt-10 -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
           {/* Card 1: Necklaces */}
           <div
             onClick={() => onSelectCategory ? onSelectCategory('necklaces') : onExploreClick()}
-            className="group relative h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
+            className="group relative min-w-[80vw] sm:min-w-0 snap-center h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
           >
             <img
               src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80"
@@ -201,7 +201,7 @@ export default function Hero({ onExploreClick, onOpenCustomizer, onSelectCategor
           {/* Card 2: Earrings */}
           <div
             onClick={() => onSelectCategory ? onSelectCategory('earrings') : onExploreClick()}
-            className="group relative h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
+            className="group relative min-w-[80vw] sm:min-w-0 snap-center h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
           >
             <img
               src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80"
@@ -230,7 +230,7 @@ export default function Hero({ onExploreClick, onOpenCustomizer, onSelectCategor
           {/* Card 3: Artisan Buttons */}
           <div
             onClick={() => onSelectCategory ? onSelectCategory('buttons') : onExploreClick()}
-            className="group relative h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
+            className="group relative min-w-[80vw] sm:min-w-0 snap-center h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
           >
             <img
               src="https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=900&q=80"

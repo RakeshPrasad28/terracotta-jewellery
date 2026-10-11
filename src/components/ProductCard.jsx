@@ -59,7 +59,7 @@ export default function ProductCard({
             e.stopPropagation();
             onToggleWishlist(product);
           }}
-          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center text-terracotta-800 hover:text-terracotta-600 hover:scale-110 transition-all"
+          className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center text-terracotta-800 hover:text-terracotta-600 hover:scale-110 transition-all"
           aria-label="Save to Wishlist"
         >
           <Heart
@@ -84,12 +84,12 @@ export default function ProductCard({
       </div>
 
       {/* Product Content Details */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
+      <div className="p-3 sm:p-5 flex flex-col flex-1 justify-between">
         <div>
           {/* Category & Weight Pill */}
-          <div className="flex items-center justify-between text-[11px] text-terracotta-700/80 mb-1.5">
-            <span className="uppercase tracking-wider font-semibold">{product.categoryLabel}</span>
-            <span className="flex items-center gap-1 text-stone-500 font-medium">
+          <div className="flex items-center justify-between gap-1 text-[9px] sm:text-[11px] text-terracotta-700/80 mb-1.5">
+            <span className="uppercase tracking-wide sm:tracking-wider font-semibold truncate">{product.categoryLabel}</span>
+            <span className="flex items-center gap-1 text-stone-500 font-medium shrink-0">
               <Feather size={11} className="text-terracotta-500" />
               {product.weight.split(' ')[0]} {product.weight.split(' ')[1] || 'g'}
             </span>
@@ -98,7 +98,7 @@ export default function ProductCard({
           {/* Title */}
           <h3
             onClick={() => onQuickView(product)}
-            className="font-serif text-base sm:text-lg font-bold text-terracotta-950 group-hover:text-terracotta-700 transition-colors cursor-pointer line-clamp-1"
+            className="font-serif text-sm sm:text-lg font-bold text-terracotta-950 group-hover:text-terracotta-700 transition-colors cursor-pointer line-clamp-2 sm:line-clamp-1"
           >
             {product.name}
           </h3>
@@ -117,10 +117,10 @@ export default function ProductCard({
         <div className="mt-4 pt-3 border-t border-terracotta-100 flex items-center justify-between">
           <div>
             <div className="flex items-baseline space-x-1.5">
-              <span className="font-serif text-lg sm:text-xl font-bold text-terracotta-950">
+              <span className="font-serif text-base sm:text-xl font-bold text-terracotta-950">
                 ₹{product.price}
               </span>
-              <span className="text-xs text-stone-400 line-through">
+              <span className="text-[10px] sm:text-xs text-stone-400 line-through">
                 ₹{product.originalPrice}
               </span>
             </div>

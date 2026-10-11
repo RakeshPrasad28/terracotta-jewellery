@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CUSTOMIZER_DATA } from '../data/products';
 import { Sparkles, Check, Clock, ShoppingBag, RotateCcw, ChevronRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -11,6 +11,19 @@ export default function CustomizerStudio({ onAddToCart }) {
   const [selectedFinish, setSelectedFinish] = useState(CUSTOMIZER_DATA.finishes[1]); // default to 24k Gold strokes
   const [customNote, setCustomNote] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
+  const sectionRef = useRef(null);
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsSectionVisible(entry.isIntersecting);
+    });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   // Switch Base Item & auto-select its first design
   const handleSelectBase = (base) => {
@@ -184,7 +197,7 @@ export default function CustomizerStudio({ onAddToCart }) {
   const currentDesignId = selectedDesign ? selectedDesign.id : 'tops';
 
   return (
-    <section id="customizer-section" className="py-16 lg:py-24 bg-[#F5EFE6]/60 border-y border-terracotta-200/80 relative">
+    <section ref={sectionRef} id="customizer-section" className="py-10 lg:py-24 bg-[#F5EFE6]/60 border-y border-terracotta-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -206,7 +219,7 @@ export default function CustomizerStudio({ onAddToCart }) {
           
           {/* LEFT: Dynamic Live Mockup & Preview Card */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-terracotta-200/70 overflow-hidden relative">
+            <div className="bg-white rounded-3xl p-4 sm:p-7 shadow-xl border border-terracotta-200/70 overflow-hidden relative">
               
               {/* Top Header */}
               <div className="flex items-center justify-between pb-3.5 border-b border-terracotta-100">
@@ -225,7 +238,7 @@ export default function CustomizerStudio({ onAddToCart }) {
               </div>
 
               {/* Dynamic Interactive SVG Canvas */}
-              <div className="my-5 relative h-72 sm:h-80 w-full rounded-2xl bg-[#FAF7F2] border border-terracotta-100 flex items-center justify-center p-4 overflow-hidden shadow-inner">
+              <div className="my-4 sm:my-5 relative h-52 sm:h-80 w-full rounded-2xl bg-[#FAF7F2] border border-terracotta-100 flex items-center justify-center p-4 overflow-hidden shadow-inner">
                 {/* Clay texture background effect */}
                 <div className="absolute inset-0 opacity-20 pointer-events-none clay-grain" />
 
@@ -613,7 +626,7 @@ export default function CustomizerStudio({ onAddToCart }) {
               </div>
 
               {/* Prominent Active Festive Theme HUD Banner */}
-              <div className="p-3 rounded-xl bg-terracotta-50 border border-terracotta-200/80 mb-4 flex items-center justify-between">
+              <div className="hidden sm:flex p-3 rounded-xl bg-terracotta-50 border border-terracotta-200/80 mb-4 items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <span className="text-base">
                     {selectedTheme.id === 'navratri' ? '🪔' : selectedTheme.id === 'divine' ? '🕉️' : selectedTheme.id === 'nature' ? '🌿' : '🏺'}
@@ -633,7 +646,7 @@ export default function CustomizerStudio({ onAddToCart }) {
               </div>
 
               {/* Order Specification Summary */}
-              <div className="space-y-2 py-3 border-y border-terracotta-100 text-xs">
+              <div className="hidden sm:block space-y-2 py-3 border-y border-terracotta-100 text-xs">
                 <div className="flex justify-between">
                   <span className="text-stone-500">Selected Design:</span>
                   <span className="font-semibold text-terracotta-950">{selectedDesign ? selectedDesign.name : selectedBase.name}</span>
@@ -653,7 +666,7 @@ export default function CustomizerStudio({ onAddToCart }) {
               </div>
 
               {/* Total Price & Add to Bag Action */}
-              <div className="pt-4 flex items-center justify-between">
+              <div className="hidden lg:flex pt-4 items-center justify-between">
                 <div>
                   <span className="text-[10px] text-stone-500 uppercase font-semibold">Artisan Price</span>
                   <div className="flex items-baseline space-x-2">
@@ -688,10 +701,10 @@ export default function CustomizerStudio({ onAddToCart }) {
           </div>
 
           {/* RIGHT: Step-by-Step Customizer Selection Options */}
-          <div className="lg:col-span-7 space-y-7">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-7">
             
             {/* STEP 1: Choose Base Category & Specific Silhouette Design */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-terracotta-200/70">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-terracotta-200/70">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <span className="w-6 h-6 rounded-full bg-terracotta-700 text-white text-xs font-bold flex items-center justify-center">1</span>
@@ -751,7 +764,7 @@ export default function CustomizerStudio({ onAddToCart }) {
             </div>
 
             {/* STEP 2: Sacred Theme & Occasion (Navratri, Temple, Nature, Tribal) */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-terracotta-200/70">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-terracotta-200/70">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <span className="w-6 h-6 rounded-full bg-terracotta-700 text-white text-xs font-bold flex items-center justify-center">2</span>
@@ -793,7 +806,7 @@ export default function CustomizerStudio({ onAddToCart }) {
             </div>
 
             {/* STEP 3: Clay Glaze & Mineral Palette */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-terracotta-200/70">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-terracotta-200/70">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <span className="w-6 h-6 rounded-full bg-terracotta-700 text-white text-xs font-bold flex items-center justify-center">3</span>
@@ -830,7 +843,7 @@ export default function CustomizerStudio({ onAddToCart }) {
             </div>
 
             {/* STEP 4: Hand-crafted Finish & Details */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-terracotta-200/70">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-terracotta-200/70">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <span className="w-6 h-6 rounded-full bg-terracotta-700 text-white text-xs font-bold flex items-center justify-center">4</span>
@@ -897,6 +910,26 @@ export default function CustomizerStudio({ onAddToCart }) {
           </div>
 
         </div>
+
+        {isSectionVisible && (
+          <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-terracotta-200 px-4 pt-3 pb-safe shadow-[0_-8px_24px_rgba(52,20,11,0.12)]">
+            <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+              <div className="shrink-0">
+                <span className="text-[10px] text-stone-500 uppercase font-semibold block">Artisan Price</span>
+                <span className="text-xl font-bold font-serif text-terracotta-950">₹{totalPrice}</span>
+              </div>
+              <button
+                onClick={handleAddCustomToCart}
+                className={`flex-1 max-w-sm px-4 py-3 rounded-full font-semibold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md ${
+                  isSuccess ? 'bg-green-700 text-white' : 'bg-terracotta-700 text-white hover:bg-terracotta-800'
+                }`}
+              >
+                {isSuccess ? <Check size={16} /> : <ShoppingBag size={16} />}
+                <span>{isSuccess ? 'Added to Bag!' : 'Craft & Add to Bag'}</span>
+              </button>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

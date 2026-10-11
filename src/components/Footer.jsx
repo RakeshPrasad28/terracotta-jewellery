@@ -19,7 +19,7 @@ export default function Footer({ onSelectCategory, onOpenCustomizer }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Trust Icons */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pb-12 border-b border-terracotta-900 text-center sm:text-left">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 pb-12 border-b border-terracotta-900 text-center sm:text-left">
           <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3">
             <div className="p-2.5 rounded-full bg-terracotta-900 text-warmGold-400">
               <Truck size={20} />
@@ -138,18 +138,18 @@ export default function Footer({ onSelectCategory, onOpenCustomizer }) {
               Subscribe to get secret previews of limited festival kiln batches (Durga Puja, Diwali & Navratri).
             </p>
 
-            <form onSubmit={handleSubscribe} className="flex gap-2">
+            <form onSubmit={handleSubscribe} className="flex min-w-0 gap-2">
               <input
                 type="email"
                 required
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 rounded-full bg-terracotta-900 border border-terracotta-800 text-white placeholder:text-terracotta-400 focus:outline-none focus:ring-1 focus:ring-warmGold-400"
+                className="w-full min-w-0 flex-1 text-xs px-3 sm:px-3.5 py-2.5 rounded-full bg-terracotta-900 border border-terracotta-800 text-white placeholder:text-terracotta-400 focus:outline-none focus:ring-1 focus:ring-warmGold-400"
               />
               <button
                 type="submit"
-                className="px-4 py-2.5 rounded-full bg-warmGold-500 hover:bg-warmGold-400 text-terracotta-950 text-xs font-bold transition-all shadow-sm shrink-0 flex items-center gap-1"
+                className="px-3 sm:px-4 py-2.5 rounded-full bg-warmGold-500 hover:bg-warmGold-400 text-terracotta-950 text-xs font-bold transition-all shadow-sm shrink-0 flex items-center gap-1"
               >
                 <span>Join</span>
                 <Send size={12} />
