@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Sparkles, Feather, Flame, ShieldCheck, HeartHandshake } from 'lucide-react';
 import gsap from 'gsap';
+import blueFloralEarrings from '../assets/earrings/Gemini_Generated_Image_50mhto50mhto50mh.png';
 
 export default function Hero({ onExploreClick, onOpenCustomizer, onSelectCategory }) {
   const heroRef = useRef(null);
@@ -204,7 +205,7 @@ export default function Hero({ onExploreClick, onOpenCustomizer, onSelectCategor
             className="group relative h-80 sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer clay-shadow transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl bg-terracotta-100"
           >
             <img
-              src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80"
+              src={blueFloralEarrings}
               alt="Terracotta Earrings"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />

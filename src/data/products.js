@@ -1,3 +1,11 @@
+import pinkJhumkas from '../assets/earrings/Gemini_Generated_Image_4mysmt4mysmt4mys.png';
+import blueFloralEarrings from '../assets/earrings/Gemini_Generated_Image_50mhto50mhto50mh.png';
+import purpleChandbalis from '../assets/earrings/Gemini_Generated_Image_dmok1sdmok1sdmok.png';
+import purpleArcEarrings from '../assets/earrings/WhatsApp Image 2026-10-11 at 20.03.31.jpeg';
+import blueRustEarrings from '../assets/earrings/WhatsApp Image 2026-10-11 at 20.04.22 (3).jpeg';
+import monochromeEarrings from '../assets/earrings/WhatsApp Image 2026-10-11 at 20.04.23.jpeg';
+import sunburstEarrings from '../assets/earrings/WhatsApp Image 2026-10-11 at 20.04.24 (3).jpeg';
+
 export const PRODUCTS = [
   // --- NECKLACES ---
   {
@@ -110,8 +118,7 @@ export const PRODUCTS = [
     festiveTag: 'Navratri Dandiya Must-Have',
     badge: 'Bestseller',
     images: [
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=900&q=80'
+      pinkJhumkas
     ],
     description: 'Handcrafted bell jhumkas with delicate terracotta ghungroo droplets that chime gently with motion. Fired in natural red clay with brass hypoallergenic ear studs.',
     weight: '14 grams per pair (Ultra lightweight)',
@@ -134,8 +141,8 @@ export const PRODUCTS = [
     festiveTag: 'Festive Classic',
     badge: 'Popular',
     images: [
-      'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80'
+      purpleChandbalis,
+      purpleArcEarrings
     ],
     description: 'Crescent moon sculpted terracotta statement earrings with delicate dot-work (alpona motif) and baked ochre and terracotta rust hues.',
     weight: '16 grams per pair',
@@ -157,8 +164,8 @@ export const PRODUCTS = [
     isFestiveSpecial: false,
     badge: 'Daily Earthy',
     images: [
-      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80'
+      sunburstEarrings,
+      monochromeEarrings
     ],
     description: 'Perfect for casual kurtas and office ethnic wear. Circular hand-etched sun disc studs in raw terracotta clay with antique copper brush accents.',
     weight: '8 grams per pair',
@@ -181,8 +188,8 @@ export const PRODUCTS = [
     festiveTag: 'Hand-painted',
     badge: 'New Arrival',
     images: [
-      'https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80'
+      blueFloralEarrings,
+      blueRustEarrings
     ],
     description: 'Tiered geometric terracotta drops painted with organic indigo botanical dye and sealed with burnt clay borders. Features lightweight surgical steel hooks.',
     weight: '12 grams per pair',

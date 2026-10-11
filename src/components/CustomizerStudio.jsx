@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { CUSTOMIZER_DATA } from '../data/products';
 import { Sparkles, Check, Clock, ShoppingBag, RotateCcw, ChevronRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import blueFloralEarrings from '../assets/earrings/Gemini_Generated_Image_50mhto50mhto50mh.png';
 
 export default function CustomizerStudio({ onAddToCart }) {
   const [selectedBase, setSelectedBase] = useState(CUSTOMIZER_DATA.itemBases[0]); // default to Earrings
@@ -69,7 +70,7 @@ export default function CustomizerStudio({ onAddToCart }) {
         selectedBase.id === 'necklace'
           ? 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80'
           : selectedBase.id === 'earrings'
-          ? 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80'
+          ? blueFloralEarrings
           : 'https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=900&q=80'
       ],
       description: `Bespoke handcrafted ${selectedDesign ? selectedDesign.name : selectedBase.name} designed in ${selectedTheme.name} theme, finished in ${selectedPalette.name} with ${selectedFinish.name}.`,
